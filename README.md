@@ -185,7 +185,7 @@ $ ansible -i hosts all -m ping
 
 Account --> my account --> Security --> Generate Tokens
 
-Token : 8122aeaf0aabfa0708813588365299c33181de6a
+Token : <STORE IN CI SECRET STORE; DO NOT COMMIT>
 
 3) On Jenkins create credentials  
 
@@ -240,7 +240,7 @@ https://docs.sonarsource.com/sonarqube/9.8/analyzing-source-code/scanners/jenkin
 # Step-7 : Jfrog Artifactory Creation
 
 
-1) Create JFrog Artifactory account (pwd: Jfrogashokit1)
+1) Create JFrog Artifactory account (pwd: <STORE SECURELY; DO NOT COMMIT>)
 
 2) Generate an access token with username (username must be your email id)
 
@@ -371,8 +371,8 @@ sudo ./aws/install --update
 Create a dedicated user in jfrog to use for a docker login
 user menu --> new user
 user name: jfrogcred
-email address: ashokit.classes@gmail.com
-password: Jfrogashokit1
+email address: <YOUR TEST ACCOUNT EMAIL>
+password: <SET LOCALLY; DO NOT COMMIT>
 
 
 4) To pull an image from jfrog at the docker level, we should log into jfrog using username and password
@@ -520,7 +520,7 @@ helm search repo stable
 9.  To login to Grafana account, use the below username and password 
     
     username: admin
-    password: prom-operator
+    password: <SET LOCALLY; DO NOT COMMIT>
     
 10. Here we should check for "Node Exporter/USE method/Node" and "Node Exporter/USE method/Cluster"
     USE - Utilization, Saturation, Errors
