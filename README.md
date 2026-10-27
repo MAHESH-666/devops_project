@@ -1,37 +1,61 @@
+# DevOps Infrastructure & CI/CD Lab
 
-# DevOps Project Outline
+A hands-on learning repository documenting a multi-stage DevOps workflow: infrastructure provisioning, configuration management, CI/CD, containerization, Kubernetes deployment, and monitoring.
 
-1) Setting up Terraform to facilitate infrastructure provisioning.
+## What this repository covers
 
-2) Using Terraform to provision Jenkins master, build nodes, and Ansible.
+- AWS infrastructure setup using Terraform
+- Jenkins controller/agent configuration
+- Ansible playbooks for server configuration
+- Jenkins pipelines and Jenkinsfile authoring
+- SonarQube analysis and quality gates
+- JFrog Artifactory integration
+- Docker image build and registry workflow
+- Kubernetes and Amazon EKS manifests
+- Helm charts and releases
+- Prometheus/Grafana monitoring
 
-3) Configuring an Ansible server.
+## Repository layout
 
-4) Employing Ansible to configure Jenkins master and build nodes.
+- `terraform-scripts/` — Terraform configuration for network/compute and EKS-related resources
+- `ansible-playbooks/` — server-configuration playbooks
+- `jenkins/` — pipeline/Jenkins resources
+- `kubernetes/` — manifests for namespace, deployment, service, and related objects
 
-5) Creating a Jenkins pipeline job.
+## Prerequisites
 
-6) Developing a Jenkinsfile from scratch.
+Use a dedicated non-production learning environment with the required cloud CLI, Terraform, Ansible, Docker, kubectl, Helm, Jenkins, and monitoring tools installed as needed by each step.
 
-7) Configuring SonarQube and Sonar scanner.
+## Security — read before running
 
-8) Executing SonarQube analysis for code quality assessment.
+This is an instructional lab, not a production-ready infrastructure blueprint. **Never commit real cloud access keys, PEM/private keys, Jenkins tokens, registry passwords, OAuth secrets, or Grafana credentials.** Use CI/CD credential stores and local environment variables. Rotate any credentials that were committed in earlier revisions; cleaning the latest README does not remove secrets from Git history. Review security groups, IAM permissions, public IPs, Kubernetes Secrets, and state files before deploying resources.
 
-9) Configuring JFrog Artifactory.
+The commands may create chargeable cloud resources. Verify the target account, region, budget, and cleanup plan before executing Terraform or cloud commands.
 
-10) Creating Dockerfile for containerization.
+## Walkthrough
 
-11) Storing Docker images on Artifactory.
+1. [Prepare the Terraform environment](#step-1--prepare-terraform-environment-on-windows)
+2. [Provision development instances](#step-2--launch-devops-instances)
+3. [Configure Ansible](#step-3--setup-ansible-server)
+4. [Configure Jenkins controller and agent](#step-4--jenkins-master--slave-setup)
+5. [Create a pipeline](#step-5--create-first-jenkins-pipeline-job)
+6. [Add SonarQube analysis](#step-6--sonarqube-integration)
+7. [Integrate JFrog Artifactory](#step-7--jfrog-artifactory-creation)
+8. [Build and run Docker images](#step-8--integrate-docker)
+9. [Create a Kubernetes cluster](#step-10--setup-kubernetes-cluster)
+10. [Deploy manifests and Helm charts](#step-12--execute-k8s-manifest-files)
+11. [Add monitoring](#step-16--monitoring)
 
-12) Utilizing Terraform to provision a Kubernetes cluster.
+## Important notes
 
-13) Creating Kubernetes objects.
+- Commands and service versions may need updating to match current provider releases.
+- Review each script and manifest before execution.
+- Use placeholders for IP addresses and secret values in published documentation.
+- Tear down test resources when finished to avoid unnecessary charges.
 
-14) Deploying Kubernetes objects using Helm.
+---
 
-15) Setting up Prometheus and Grafana using Helm charts.
-
-16) Monitoring the Kubernetes cluster using Prometheus.
+## Detailed setup guide
 
 # Step-1 : Prepare Terraform Environment on Windows
 
