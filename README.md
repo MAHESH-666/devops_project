@@ -93,14 +93,14 @@ sudo apt install ansible
 4) Add below content in hosts file 
 
 [jenkins-master]
-18.209.18.194
+<JENKINS_MASTER_PUBLIC_IP>
 
 [jenkins-master:vars]
 ansible_user=ubuntu
 ansible_ssh_private_key_file=/opt/dpp.pem
  
 [jenkins-slave]
-54.224.107.148
+<JENKINS_AGENT_PUBLIC_IP>
 
 [jenkins-slave:vars]
 ansible_user=ubuntu
